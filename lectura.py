@@ -17,35 +17,39 @@ w = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan 
 
 contador = 0
 iterador = 0
+aux = 0
 
 def neurona (p,w):
     suma = p.dot(w)
     return int(suma[0] >= 0)
 
-def corregir(er,p):
-    print er
-    print p
-    print er*p
-    print w
-    print w + er*p
-
-    return w+er*p
+def corregir(want,er,pex):
+    w = want + er*np.transpose(pex)
+    return w
 
 
 while (contador < 4):
+    aux += 1
     error = t[iterador] - neurona(p[iterador],w)
     print 'error {}'.format(iterador) + str(error)
-    if error:
+    if error[0]:
         contador = 0
-        w = corregir(error, p[iterador])
+        w = corregir(w, error, p[iterador][np.newaxis])
     else:
+        print 'pit {}'.format(p[iterador])
         contador += 1
-    
+
     if (iterador < 3):
         iterador = iterador + 1
     else:
         iterador = 0
 
+print aux
+x = np.arange(-5. , 5.0, 1)
+y = -w[1]*x + w[0] / w[2]
+pl.plot(x,y)
+pl.grid(True)
+pl.show()
 # array[inicio:final:pasos]
 # [0,[-1]]
 # [0::-1]  primera fila
