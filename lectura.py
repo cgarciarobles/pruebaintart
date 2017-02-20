@@ -34,14 +34,13 @@ def corregir(want,er,pex):
     return w
 
 def costo(er, pex, omega, vw, sumatoria): #vwa es el arreglo vw que modificare
-    #print pex[0,omega]
-    #print vw[omega]
+    print pex[0,omega]
+    print vw[omega]
     j = (pex[0,omega] * vw[omega])
-    print "J:",j
-    print "E:",er
-    sumatoria += er
-    sumatoria = sumatoria**2
-    listax.append(er)
+    #print "J:",j
+    #print "E:",er
+    sumatoria += er**2
+    listax.append(vw[omega])
     listay.append(sumatoria)
 
 while (contador < 4):
@@ -108,6 +107,10 @@ print w
 fig= pl.figure()
 axes=fig.add_subplot(111)
 axes.plot(listax,listay)
+
+#for xx,xy in listax,listay:
+#    pl.plot(xx,xy)
+
 pl.show()
 
 # array[inicio:final:pasos]
