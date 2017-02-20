@@ -7,16 +7,15 @@ data = sp.genfromtxt("datos.csv", delimiter="")
 t = data[:,[-1]] #obtengo la ultima columna del arreglo data
 p = data[:,:-1] #obtengo el arreglo data sin ultima columna
 b = np.ones((p.shape[0],1))
-
 p = np.concatenate((b,p), axis = 1)
 #w = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan los pesos de la neurona
-#w = np.array([[-0.5],[-1],[1]])
+w = np.array([[-0.5],[-1],[1]])
 #w = np.array([[0.80922424],[0.42854118],[0.34443655]]) #pruebas para w
-w = np.array([[0.1962092],[0.22406114],[0.55542444]])
-
+#w = np.array([[0.1962092],[0.22406114],[0.55542444]])
 
 vw = w
-lista = []
+listax = []
+listay = []
 #print p
 #print w
 #print np.dot(p,w)
@@ -24,6 +23,7 @@ lista = []
 contador = 0
 iterador = 0
 aux = 0
+sumatoria = 0
 
 def neurona (p,w):
     suma = p.dot(w)
@@ -33,13 +33,20 @@ def corregir(want,er,pex):
     w = want + er*np.transpose(pex)
     return w
 
-def costo(vwa,er,pex): #vwa es el arreglo vw que modificare
-    vw = vwa + er*np.transpose(pex)
-    return vw
+def costo(er, pex, omega, vw, sumatoria): #vwa es el arreglo vw que modificare
+    #print pex[0,omega]
+    #print vw[omega]
+    j = (pex[0,omega] * vw[omega])
+    print "J:",j
+    print "E:",er
+    sumatoria += er
+    sumatoria = sumatoria**2
+    listax.append(er)
+    listay.append(sumatoria)
 
 while (contador < 4):
     x = np.arange(-5. , 5.0, 1)
-    y = w[1]*x + w[0] / w[2]
+    y = (w[1]*x + w[0]) / w[2]
     #pl.plot(x,y)
     #pl.grid(True)
     #pl.show(block=False)
@@ -61,7 +68,7 @@ while (contador < 4):
 
 
 x = np.arange(-5 , 5.0, 1)
-y = -w[1]*x - w[0] / w[2]
+y = (-w[1]*x - w[0]) / w[2]
 
 pl.plot(1,1,"o")
 pl.plot(0,1,"o")
@@ -82,19 +89,26 @@ aux2 = 0
 while (cont2 < 4):
     aux += 1
     error = t[it2] - neurona(p[it2],vw)
-    print 'error {}'.format(it2) + str(error)
+    costo(error, p[it2][np.newaxis], omega, vw, sumatoria)
+    #print 'error {}'.format(it2) + str(error)
     if error[0]:
         cont2 = 0
         vw = corregir(vw, error, p[it2][np.newaxis])
         cont2 += 1
     else:
-        print 'pit {}'.format(p[it2])
+        #print 'pit {}'.format(p[it2])
         cont2 += 1
 
     if (it2 < 3):
         it2 = it2 + 1
     else:
         it2 = 0
+
+print w
+fig= pl.figure()
+axes=fig.add_subplot(111)
+axes.plot(listax,listay)
+pl.show()
 
 # array[inicio:final:pasos]
 # [0,[-1]]
