@@ -33,15 +33,26 @@ def corregir(want,er,pex):
     w = want + er*np.transpose(pex)
     return w
 
-def costo(er, pex, omega, vw, sumatoria): #vwa es el arreglo vw que modificare
-    print pex[0,omega]
-    print vw[omega]
-    j = (pex[0,omega] * vw[omega])
+def costo(x,y): #vwa es el arreglo vw que modificare
+
+    #print t[0]
+    ran = np.arange(-5,5,1)
+    j = (1./2.)*len(x)
+    cos = 0
+    for i in range(len(x)):
+        cos += ((ran*x[i] - y[i])**2)
+
+    j = j*cos
+    pl.plot(ran,j)
+    pl.grid(True)
+    pl.show()
+    #print vw[omega]
+    #j = (pex[0,omega] * vw[omega])
     #print "J:",j
     #print "E:",er
-    sumatoria += er**2
-    listax.append(vw[omega])
-    listay.append(sumatoria)
+    #sumatoria += er**2
+    #listax.append(vw[omega])
+    #listay.append(sumatoria)
 
 while (contador < 4):
     x = np.arange(-5. , 5.0, 1)
@@ -87,8 +98,8 @@ aux2 = 0
 
 while (cont2 < 4):
     aux += 1
-    error = t[it2] - neurona(p[it2],vw)
-    costo(error, p[it2][np.newaxis], omega, vw, sumatoria)
+    k = p[:,[-2]]
+    costo(t,k)
     #print 'error {}'.format(it2) + str(error)
     if error[0]:
         cont2 = 0
@@ -104,14 +115,11 @@ while (cont2 < 4):
         it2 = 0
 
 print w
-fig= pl.figure()
-axes=fig.add_subplot(111)
-axes.plot(listax,listay)
+#fig= pl.figure()
+#axes=fig.add_subplot(111)
+#axes.plot(listax,listay)
 
-#for xx,xy in listax,listay:
-#    pl.plot(xx,xy)
-
-pl.show()
+#pl.show()
 
 # array[inicio:final:pasos]
 # [0,[-1]]
