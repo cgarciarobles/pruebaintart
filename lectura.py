@@ -9,7 +9,7 @@ p = data[:,:-1] #obtengo el arreglo data sin ultima columna
 b = np.ones((p.shape[0],1))
 p = np.concatenate((b,p), axis = 1)
 #w = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan los pesos de la neurona
-w = np.array([[-0.5],[-1],[1]])
+w = np.array([[1],[1],[1]])
 #w = np.array([[0.80922424],[0.42854118],[0.34443655]]) #pruebas para w
 #w = np.array([[0.1962092],[0.22406114],[0.55542444]])
 
@@ -27,7 +27,7 @@ sumatoria = 0
 
 def neurona (p,w):
     suma = p.dot(w)
-    return int(suma[0] >= 0)
+    return suma[0]
 
 def corregir(want,er,pex):
     w = want + er*np.transpose(pex)
@@ -36,7 +36,7 @@ def corregir(want,er,pex):
 def costo(x,y): #vwa es el arreglo vw que modificare
 
     #print t[0]
-    ran = np.arange(-5,5,1)
+    ran = np.arange(-5,5,0.3)
     j = (1./2.)*len(x)
     cos = 0
     for i in range(len(x)):
@@ -54,43 +54,43 @@ def costo(x,y): #vwa es el arreglo vw que modificare
     #listax.append(vw[omega])
     #listay.append(sumatoria)
 
-while (contador < 4):
-    x = np.arange(-5. , 5.0, 1)
-    y = (w[1]*x + w[0]) / w[2]
-    #pl.plot(x,y)
-    #pl.grid(True)
-    #pl.show(block=False)
-    aux += 1
-    error = t[iterador] - neurona(p[iterador],w)
-    print 'error {}'.format(iterador) + str(error)
-    if error[0]:
-        contador = 0
-        w = corregir(w, error, p[iterador][np.newaxis])
-        contador += 1
-    else:
-        print 'pit {}'.format(p[iterador])
-        contador += 1
-
-    if (iterador < 3):
-        iterador = iterador + 1
-    else:
-        iterador = 0
-
-
-x = np.arange(-5 , 5.0, 1)
-y = (-w[1]*x - w[0]) / w[2]
-
-pl.plot(1,1,"o")
-pl.plot(0,1,"o")
-pl.plot(1,0,"o")
-pl.plot(0,0,"o")
-pl.plot(x,y)
-pl.grid(True)
-pl.show()
-
-print "\n" + "vector inicial: " + "\n{}".format(vw)
-print "Cantidad de iteraciones para el entrenamiento: {}".format(aux) + "\n"
-omega = input('Respecto a que Omega desea realizar la grafica de error (Escriba un numero [0-n]): ')
+# while (contador < 4):
+#     x = np.arange(-5. , 5.0, 1)
+#     y = (w[1]*x + w[0]) / w[2]
+#     #pl.plot(x,y)
+#     #pl.grid(True)
+#     #pl.show(block=False)
+#     aux += 1
+#     error = t[iterador] - neurona(p[iterador],w)
+#     print 'error {}'.format(iterador) + str(error)
+#     if error[0]:
+#         contador = 0
+#         w = corregir(w, error, p[iterador][np.newaxis])
+#         contador += 1
+#     else:
+#         print 'pit {}'.format(p[iterador])
+#         contador += 1
+#
+#     if (iterador < 3):
+#         iterador = iterador + 1
+#     else:
+#         iterador = 0
+#
+#
+#  x = np.arange(-5 , 5.0, 1)
+#  y = (-w[1]*x - w[0]) / w[2]
+#
+# pl.plot(1,1,"o")
+# pl.plot(0,1,"o")
+# pl.plot(1,0,"o")
+# pl.plot(0,0,"o")
+# # pl.plot(x,y)
+# pl.grid(True)
+# pl.show()
+#
+# print "\n" + "vector inicial: " + "\n{}".format(vw)
+# print "Cantidad de iteraciones para el entrenamiento: {}".format(aux) + "\n"
+# omega = input('Respecto a que Omega desea realizar la grafica de error (Escriba un numero [0-n]): ')
 
 cont2 = 0
 it2 = 0

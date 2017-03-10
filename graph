@@ -1,0 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as pl
+
+x = np.arange(-10,10,1)
+y = 1 / (1 + np.exp(-x))
+pl.plot(x,y)
