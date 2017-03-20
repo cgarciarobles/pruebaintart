@@ -1,0 +1,46 @@
+#EJERCICIO 1
+
+x = 5*(78-32)/9.
+print x
+
+#Respuesta = 25.
+
+######################
+
+
+#EJERCICIO 2
+
+def calculo(inicial, numa):
+    tasaBancaria = 0.25/100
+    tasaExtra = 1.49/100
+    num = inicial + ((1.74/100)*inicial) * 5
+    print num
+
+inicial = float(input('Escriba la cantidad inicial del prestamo Q.'))
+numa = float(input('Escriba la cantidad de a;os: '))
+calculo(inicial, numa)
+
+#Respuesta Q163,050.00
+
+
+
+######################
+
+
+
+#EJERCICIO 3
+
+def llamada(x):
+    sum = 0
+    for i in range(len(x)-1):
+        #print x[i][0]
+        sum = sum + x[i][0]*x[i+1][1]
+
+    for i in range(1,len(x)):
+        #print x[i][0]
+        sum = sum + x[i][0]*x[i-1][1]
+
+    return 0.5*sum
+
+x = ([[2,3],[-3,1],[-3,2],[4,5]])
+print llamada(x)

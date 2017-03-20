@@ -78,8 +78,6 @@ while (errorMax(individualE) == False):
         print "\n"
         w[i] = corregir(w[i], individualE, p[i])
 
-
-
 individualE = 32000.
 while (errorMax(individualE) == False):
     for i in range(len(w)):
