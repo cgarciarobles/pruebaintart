@@ -6,7 +6,12 @@ import matplotlib.pyplot as pl
 data = sp.genfromtxt("data.csv", delimiter="")
 t = data[:,[-1]]    #obtengo la ultima columna del arreglo data
 p = data[:,:-1]     #obtengo el arreglo data sin ultima columna
-w = np.array([[-0.8,0.5], [0.2,-0.1],[0.4,-0.9]])
+w = np.array([[-0.6,-0.2], [-0.6,-0.2]])
+print w
+
+w1 = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan los pesos de la neurona
+print w1
+
 summation   = 0.
 
 def neurona1(p,w):
@@ -27,11 +32,6 @@ def neurona3(p,w):
 
 def gradiente(hdx):
     fPrima = np.exp(-hdx) / pow(1+np.exp(-hdx),2)
-    salida = hdx - pow(hdx,2)
-    #fPrima = -1 *hdx*-fPrima
-    print "fPrima",fPrima
-    print "fPrimaCompr",salida
-
     return -1 *hdx*-fPrima
 
 def errorMax(individualE):
