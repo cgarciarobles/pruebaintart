@@ -6,7 +6,7 @@ import matplotlib.pyplot as pl
 data = sp.genfromtxt("data.csv", delimiter="")
 t = data[:,[-1]]    #obtengo la ultima columna del arreglo data
 p = data[:,:-1]     #obtengo el arreglo data sin ultima columna
-w = np.array([[-0.6,-0.2], [-0.6,-0.2]])
+w1 = np.array([-0.6,-0.2])
 summation   = 0.
 
 def neurona(p,w):
@@ -27,9 +27,8 @@ def gradiente(hdx):
     fPrima = np.exp(-hdx) / pow(1+np.exp(-hdx),2)
     return -1 *hdx*-fPrima
 
-for i in range(len(w)):
-    print w[i]
-    hdx = neurona(p[i],w[i])
+for i in range(len(w1)):
+    hdx = neurona(p[i],w1)
     individualE = (t[i] - hdx)
     summation += individualE
     errorCuadratico = (0.5)*pow(summation,2)

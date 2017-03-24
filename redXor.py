@@ -9,10 +9,11 @@ p = data[:,:-1]     #obtengo el arreglo data sin ultima columna
 #w = np.array([[-0.6,-0.2], [-0.6,-0.2]])
 #print w
 
-#w1 = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan los pesos de la neurona
+w1 = np.random.rand(p.shape[1],1) #genera los numeros aleatorios que representan los pesos de la neurona
+print w1
 #w2 = np.random.rand(p.shape[1],1)
 #w3 = np.random.rand(p.shape[1],1)
-w1 = np.array([[-0.8,0.2,0.4]])
+#w1 = np.array([[-0.8,0.2,0.4]])
 w2 = np.array([[0.5,-0.1,-0.9]])
 
 

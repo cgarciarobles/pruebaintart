@@ -1,0 +1,13 @@
+import scipy as sp
+import numpy as np
+import timeit as ti
+import matplotlib.pyplot as pl
+
+data = sp.genfromtxt("data.csv", delimiter="")
+t = data[:,[-1]]    #obtengo la ultima columna del arreglo data
+p = data[:,:-1]     #obtengo el arreglo data sin ultima columna
+
+w1 = np.array([[-0.8,0.2,0.4]])
+print w1
+w1 = np.array([-0.8,0.2,0.4])
+print w1
