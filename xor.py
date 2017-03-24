@@ -11,7 +11,8 @@ import matplotlib.pyplot as pl
 #x = np.array([0.,0.]) #vector de ingreso para neurona
 #w = np.array([[0.3,-0.1], [0.5,0.8]]) #pesos que se multiplican por el vector que ingresa
 x = np.array([0.5,0.5])
-w = np.array([[-0.6,-0.2]])
+#w = np.array([[-0.6,-0.2]])
+w = np.array([[-0.8,0.5],[0.2,0.1],[0.4,-0.9]])
 
 
 def neurona(x,w):
