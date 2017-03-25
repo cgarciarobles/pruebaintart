@@ -48,7 +48,8 @@ def gradiente(hdx):
     return -1 *hdx*-fPrima
 
 def errorMax(errorRecibido):
-    diferencia = 0.05 - errorRecibido
+
+    diferencia = 0.1 - errorRecibido
     if (diferencia >= 0):
         return True
     else:
