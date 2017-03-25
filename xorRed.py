@@ -103,9 +103,9 @@ def proceso(wa, contador, iterador):
         wa[2] = wa[2] - deltaOmega(wa,gradient3,vec)
         #aux = ftransferencia(p[iterador])
         aux = transferencia(hdx1)
-        wa[0] = wa[0] + corregirO(gradient1, p[iterador], aux)
+        wa[0] = wa[0] - corregirO(gradient1, p[iterador], aux)
         aux = transferencia(hdx2)
-        wa[1] = wa[1] + corregirO(gradient1, p[iterador], aux)
+        wa[1] = wa[1] - corregirO(gradient1, p[iterador], aux)
         #wa[0] = corregirO(gradient3, wa[0], aux)
         #wa[1] = corregirO(gradient3, wa[1], aux)
         if (iterador == 0):
@@ -146,7 +146,7 @@ caux = 0
 while (contador < 4):
     #En este marco debo trabajar las iteraciones a la tabla de entradas
     caux += 1
-    if (caux == 1000):
+    if (caux == 300):
         break;
     if (iterador < 3):
         if (iterador == 0):
