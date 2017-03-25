@@ -30,10 +30,14 @@ w4 = np.array([[-0.8,0.5],[0.2,0.1],[0.3730,-0.92]])
 #w2 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
 #w3 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
 #w4 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
-w1 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
-w2 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
-w3 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
-w4 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
+
+
+#w1 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
+
+w1 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
+w2 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
+w3 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
+w4 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
 
 summation   = 0.
 
@@ -49,8 +53,8 @@ def gradiente(hdx):
 
 def errorMax(errorRecibido):
 
-    diferencia = 0.1 - errorRecibido
-    if (diferencia >= 0):
+    #diferencia = 0.1 - errorRecibido
+    if ((errorRecibido >= -0.10) and (errorRecibido <= 0.10)) or ((errorRecibido >= 0.90) and (errorRecibido <= 1.10)) :
         return True
     else:
         return False
@@ -82,7 +86,7 @@ def proceso(wa, contador, iterador):
     #print "error Cuadratico:    ",errorCuadratico
     print "\n"
     #
-    vector = np.array([hdx1,hdx2,1])
+    vector = np.array([hdx1,hdx2,wa[2]])
     hdx3 = neurona(vector,wa[2])
     individualE3 = (t[iterador] - hdx3)
     summation += individualE3
@@ -146,7 +150,7 @@ caux = 0
 while (contador < 4):
     #En este marco debo trabajar las iteraciones a la tabla de entradas
     caux += 1
-    if (caux == 300):
+    if (caux == 20):
         break;
     if (iterador < 3):
         if (iterador == 0):
