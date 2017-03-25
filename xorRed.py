@@ -86,7 +86,7 @@ def proceso(wa, contador, iterador):
     #print "error Cuadratico:    ",errorCuadratico
     print "\n"
     #
-    vector = np.array([hdx1,hdx2,wa[2]])
+    vector = np.array([hdx1,hdx2,1])
     hdx3 = neurona(vector,wa[2])
     individualE3 = (t[iterador] - hdx3)
     summation += individualE3
@@ -150,7 +150,7 @@ caux = 0
 while (contador < 4):
     #En este marco debo trabajar las iteraciones a la tabla de entradas
     caux += 1
-    if (caux == 20):
+    if (caux == 5):
         break;
     if (iterador < 3):
         if (iterador == 0):
