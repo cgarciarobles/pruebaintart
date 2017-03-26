@@ -52,6 +52,7 @@ hdx1 = 0.
 errorCuadratico = 0.
 gradient = 0.
 
+
 while (errorMax(individualE) == False):
     for i in range(len(w)):
         hdx1 = neurona1(p[i],w[i])

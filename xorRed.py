@@ -12,33 +12,8 @@ b = np.ones((p.shape[0],1))
 p = np.concatenate((b,p), axis = 1)
 print p
 
-#w1 = np.array([-0.6,-0.2])
-#w2 = np.array([-0.6,-0.2])
-#w3 = np.array([-0.6,-0.2])
-w1 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
-#w2 = np.array([[-0.8,-0.2],[-0.6,-0.2],[-0.6,-0.2]])
-w2 = np.array([[-0.8,0.5],[0.2,0.1],[0.3730,-0.92]])
-w3 = np.array([[-0.8,0.5],[0.2,0.1],[0.3730,-0.92]])
-w4 = np.array([[-0.8,0.5],[0.2,0.1],[0.3730,-0.92]])
-#w3 = np.array([[-0.6,-0.2],[-0.6,-0.2],[-0.6,-0.2]])
-#w4 = np.array([[-0.6,-0.2],[-0.6,-0.2],[-0.6,-0.2]])
-
-
-
-#pruebas clase
-#w1 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
-#w2 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
-#w3 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
-#w4 = np.array([[-0.5,0.7],[0.2,-0.3],[-1.3,-3]])
-
-
-#w1 = np.array([[-0.8,0.5,0.1],[0.2,0.1,0.1],[0.4,-0.9,0.1]])
 
 w1 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
-w2 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
-w3 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
-w4 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
-
 summation   = 0.
 
 def neurona(p,w):
@@ -46,10 +21,10 @@ def neurona(p,w):
         y = 1 / (1 + np.exp(-r));j = (np.exp(-r)) / pow((1 + np.exp(-r)),2)
         return y
 
-def gradiente(hdx):
-
-    fPrima = np.exp(-hdx) / pow(1+np.exp(-hdx),2)
-    return -1 *hdx*-fPrima
+def gradiente(sumatoriaEI, hdx):
+    #fPrima = np.exp(-hdx) / pow(1+np.exp(-hdx),2)
+    salida = transferencia(hdx)
+    return -1*sumatoriaEI*salida
 
 def errorMax(errorRecibido):
 
@@ -65,32 +40,35 @@ def proceso(wa, contador, iterador):
     print "hola"
     print p[iterador]
     hdx1 = neurona(p[iterador],wa[0])
-    individualE1 = (t[iterador] - hdx1)
-    summation += individualE1
-    gradient1 = gradiente(hdx1)
-    errorCuadratico = (0.5)*pow(summation,2)
-    print "error Individual:    ",individualE1
+    ##individualE1 = (t[iterador] - hdx1)  #para borrar
+    ##summation += individualE1  #para borrar
+    ##gradient1 = gradiente(individualE1,hdx1)  #para borrar
+    ##errorCuadratico = (0.5)*pow(summation,2)  #para borrar
+    #print "error Individual:    ",individualE1  #para borrar
+
     print "hdx1:                 ",hdx1
-    print "gradiente:           ",gradient1
-    #print "error Cuadratico:    ",errorCuadratico
+    ##print "gradiente:           ",gradient1  #para borrar
+
     print "\n"
+
     #
     hdx2 = neurona(p[iterador],wa[1])
-    individualE2 = (t[iterador] - hdx2)
-    summation += individualE2
-    gradient2 = gradiente(hdx2)
-    errorCuadratico = (0.5)*pow(summation,2)
-    print "error Individual:    ",individualE2
+    ##individualE2 = (t[iterador] - hdx2)  #para borrar
+    ##summation += individualE2  #para borrar
+    #gradient2 = gradiente(individualE2,hdx2)  #para borrar
+    #errorCuadratico = (0.5)*pow(summation,2)  #para borrar
+    #print "error Individual:    ",individualE2   #para borrar
     print "hdx2:                 ",hdx2
-    print "gradiente:           ",gradient2
-    #print "error Cuadratico:    ",errorCuadratico
+    #print "gradiente:           ",gradient2  #para borrar
+
     print "\n"
+
     #
-    vector = np.array([hdx1,hdx2,1])
+    vector = np.array([1,hdx1,hdx2])
     hdx3 = neurona(vector,wa[2])
     individualE3 = (t[iterador] - hdx3)
     summation += individualE3
-    gradient3 = gradiente(hdx3)
+    gradient3 = gradiente(individualE3, hdx3)
     errorCuadratico = (0.5)*pow(summation,2)
     print "error Individual:    ",individualE3
     print "hdx3:                 ",hdx3
@@ -102,39 +80,34 @@ def proceso(wa, contador, iterador):
     if errorMax(errorCuadratico):
         return 1
     else:
-        #vec = np.array([[hdx1,hdx2]])
-        vec = p[iterador]
-        wa[2] = wa[2] - deltaOmega(wa,gradient3,vec)
+        gradient1 = wa[2][1] * gradient3 * transferencia(hdx1)
+        gradient2 = wa[2][2] * gradient3 * transferencia(hdx2)
+        #print gradient1
+        #print wa[2]
+        wa[2] = wa[2] - deltaOmega(wa,gradient3,vector)
+        print wa[2]
         #aux = ftransferencia(p[iterador])
         aux = transferencia(hdx1)
-        wa[0] = wa[0] - corregirO(gradient1, p[iterador], aux)
+        print wa[0]
+        wa[0] = wa[0] - corregirO(gradient1, aux)
+        print wa[0]
+
         aux = transferencia(hdx2)
-        wa[1] = wa[1] - corregirO(gradient1, p[iterador], aux)
+        wa[1] = wa[1] - corregirO(gradient2, aux)
         #wa[0] = corregirO(gradient3, wa[0], aux)
         #wa[1] = corregirO(gradient3, wa[1], aux)
-        if (iterador == 0):
-            w1[0] = wa[0]
-            w1[1] = wa[1]
-            w1[2] = wa[2]
-        elif (iterador == 1):
-            w2[0] = wa[0]
-            w2[1] = wa[1]
-            w2[2] = wa[2]
-        elif (iterador == 2):
-            w3[0] = wa[0]
-            w3[1] = wa[1]
-            w3[2] = wa[2]
-        elif (iterador == 3):
-            w4[0] = wa[0]
-            w4[1] = wa[1]
-            w4[2] = wa[2]
+        #if (iterador == 0):
+        w1[0] = wa[0]
+        w1[1] = wa[1]
+        w1[2] = wa[2]
+
 
 
 def deltaOmega(wa, gradient, vec):
     return 0.5*gradient*vec
 
-def corregirO(gradient, wa, aux):
-    return gradient*wa*aux
+def corregirO(gradient, aux):
+    return 0.5*gradient*aux
 
 def ftransferencia(x):
     print "traaaaansferencia",np.exp(-x) / pow(1+np.exp(-x),2)
@@ -150,28 +123,18 @@ caux = 0
 while (contador < 4):
     #En este marco debo trabajar las iteraciones a la tabla de entradas
     caux += 1
-    if (caux == 5):
+    print "ITERACION",caux
+    if (caux == 4000):
         break;
     if (iterador < 3):
-        if (iterador == 0):
-            if (proceso(w1, contador, iterador) == 0):
-                contador += 1
-            else:
-                contador = 0
-        elif (iterador == 1):
-            if (proceso(w2, contador, iterador) == 0):
-                contador += 1
-            else:
-                contador = 0
-        elif (iterador == 2):
-            if (proceso(w3, contador, iterador) == 0):
-                contador += 1
-            else:
-                contador = 0
+        #if (iterador == 0):
+        if (proceso(w1, contador, iterador) == 0):
+            contador += 1
+        else:
+            contador = 0
         iterador = iterador + 1
-
     else:
-        if (proceso(w4, contador, iterador) == 0):
+        if (proceso(w1, contador, iterador) == 0):
             contador += 1
         else:
             contador = 0
