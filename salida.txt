@@ -1,0 +1,512 @@
+
+# cgarciarobles @ CGarciaRobles in ~/Documentos/inteligencia artificial on git:master x [19:54:44]
+$ python2 xorRed.py
+[[ 0.  0.]
+ [ 0.  1.]
+ [ 1.  0.]
+ [ 1.  1.]]
+[[ 1.  0.  0.]
+ [ 1.  0.  1.]
+ [ 1.  1.  0.]
+ [ 1.  1.  1.]]
+ITERACION 1
+hola
+[ 1.  0.  0.]
+hdx1:                  0.622459331202
+
+
+hdx2:                  0.710949502625
+
+
+error Individual:     [-0.71644036]
+hdx3:                  0.716440355992
+gradiente:            [ 0.14554742]
+[ 1.  0.  0.]
+error Cuadratico:     [ 0.25664339]
+
+
+[ 0.42722629  0.75470133 -0.15173843]
+[ 0.5 -0.5  0.8]
+[ 0.49678476 -0.50321524  0.79678476]
+ITERACION 2
+hola
+[ 1.  0.  1.]
+hdx1:                  0.78475075329
+
+
+hdx2:                  0.668324034388
+
+
+error Individual:     [ 0.28535166]
+hdx3:                  0.714648341814
+gradiente:            [-0.05819065]
+[ 1.  0.  1.]
+error Cuadratico:     [ 0.04071278]
+
+
+ITERACION 3
+hola
+[ 1.  1.  0.]
+hdx1:                  0.498392383523
+
+
+hdx2:                  0.785938409831
+
+
+error Individual:     [ 0.33534536]
+hdx3:                  0.664654635663
+gradiente:            [-0.07474474]
+[ 1.  1.  0.]
+error Cuadratico:     [ 0.05622826]
+
+
+ITERACION 4
+hola
+[ 1.  1.  1.]
+hdx1:                  0.687907393708
+
+
+hdx2:                  0.750432816702
+
+
+error Individual:     [-0.69688781]
+hdx3:                  0.69688780551
+gradiente:            [ 0.14720723]
+[ 1.  1.  1.]
+error Cuadratico:     [ 0.24282631]
+
+
+[ 0.35362268  0.70406886 -0.206973  ]
+[ 0.49678476 -0.50321524  0.79678476]
+[ 0.4942244 -0.5057756  0.7942244]
+ITERACION 5
+hola
+[ 1.  0.  0.]
+hdx1:                  0.621101085744
+
+
+hdx2:                  0.711093138887
+
+
+error Individual:     [-0.6555992]
+hdx3:                  0.655599198957
+gradiente:            [ 0.14802701]
+[ 1.  0.  0.]
+error Cuadratico:     [ 0.21490515]
+
+
+[ 0.27960917  0.65809899 -0.2596035 ]
+[ 0.4942244 -0.5057756  0.7942244]
+[ 0.49133839 -0.50866161  0.79133839]
+ITERACION 6
+hola
+[ 1.  0.  1.]
+hdx1:                  0.782905078382
+
+
+hdx2:                  0.668784175077
+
+
+error Individual:     [ 0.34950415]
+hdx3:                  0.650495853018
+gradiente:            [-0.07946012]
+[ 1.  0.  1.]
+error Cuadratico:     [ 0.06107657]
+
+
+ITERACION 7
+hola
+[ 1.  1.  0.]
+hdx1:                  0.495669302255
+
+
+hdx2:                  0.786287558829
+
+
+error Individual:     [ 0.40090742]
+hdx3:                  0.599092584248
+gradiente:            [-0.09629021]
+[ 1.  1.  0.]
+error Cuadratico:     [ 0.08036338]
+
+
+ITERACION 8
+hola
+[ 1.  1.  1.]
+hdx1:                  0.684388813573
+
+
+hdx2:                  0.751015715352
+
+
+error Individual:     [-0.63065748]
+hdx3:                  0.630657480973
+gradiente:            [ 0.14689818]
+[ 1.  1.  1.]
+error Cuadratico:     [ 0.19886443]
+
+
+[ 0.20616008  0.60783125 -0.31476492]
+[ 0.49133839 -0.50866161  0.79133839]
+[ 0.48908317 -0.51091683  0.78908317]
+ITERACION 9
+hola
+[ 1.  0.  0.]
+hdx1:                  0.619890427215
+
+
+hdx2:                  0.711362857726
+
+
+error Individual:     [-0.58880725]
+hdx3:                  0.588807246122
+gradiente:            [ 0.14255805]
+[ 1.  0.  0.]
+error Cuadratico:     [ 0.17334699]
+
+
+[ 0.13488106  0.56364607 -0.36547017]
+[ 0.48908317 -0.51091683  0.78908317]
+[ 0.48667774 -0.51332226  0.78667774]
+ITERACION 10
+[]
+10
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:138:54: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:169:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:179:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:188:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:195:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:202:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:210:71: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:219:73: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:228:72: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:440:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:510:72: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:548:72: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:619:75: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:625:77: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:651:73: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:657:75: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:724:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1295:60: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1307:62: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1359:62: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1372:72: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1426:54: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1437:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1447:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1456:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1465:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1534:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1588:74: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1594:76: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1620:73: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:1626:75: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:2476:9: Not using units is deprecated. Assuming 'px'.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:2476:9: Expected a string.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3322:53: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3352:51: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3355:53: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3360:53: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3360:87: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3548:8: not a number
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3548:17: Using Pango syntax for the font: style property is deprecated; please use CSS syntax
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3887:8: not a number
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3887:20: Using Pango syntax for the font: style property is deprecated; please use CSS syntax
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3907:54: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3915:8: not a number
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3915:22: Using Pango syntax for the font: style property is deprecated; please use CSS syntax
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3918:8: not a number
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3918:28: Using Pango syntax for the font: style property is deprecated; please use CSS syntax
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3921:8: not a number
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:3921:22: Using Pango syntax for the font: style property is deprecated; please use CSS syntax
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:4350:54: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:4359:56: Using one color stop with linear-gradient() is deprecated.
+
+(python2:3250): Gtk-WARNING **: Theme parsing error: gtk.css:4369:56: Using one color stop with linear-gradient() is deprecated.
+Traceback (most recent call last):
+  File "xorRed.py", line 154, in <module>
+    pl.plot(errores,ran)
+  File "/usr/lib/python2.7/site-packages/matplotlib/pyplot.py", line 3161, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/matplotlib/__init__.py", line 1819, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/matplotlib/axes/_axes.py", line 1382, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 381, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 359, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/python2.7/site-packages/matplotlib/axes/_base.py", line 219, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+
+# cgarciarobles @ CGarciaRobles in ~/Documentos/inteligencia artificial on git:master x [19:54:47] C:1
+$
+
+
+ITERACION 1
+hola
+[ 1.  0.  0.]
+hdx1:                  0.622459331202
+
+
+hdx2:                  0.710949502625
+
+
+error Individual:     [-0.71644036]
+hdx3:                  0.716440355992
+gradiente:            [ 0.14554742]
+[ 1.  0.  0.]
+error Cuadratico:     [ 0.25664339]
+
+
+wa2 [ 0.5  0.8 -0.1]
+wa2 [ 0.42722629  0.75470133 -0.15173843]
+transferencia simple 0.235003712202
+transferencia complicada traaaaansferencia 0.227266091752
+0.227266091752
+[ 0.5 -0.5  0.8]
+[ 0.49678476 -0.50321524  0.79678476]
+hola
+[ 1.  0.  0.]
+hdx1:                  0.621703439947
+
+
+hdx2:                  0.711012654141
+
+
+error Individual:     [-0.68751749]
+hdx3:                  0.687517487132
+gradiente:            [ 0.14770433]
+[ 1.  0.  0.]
+error Cuadratico:     [ 0.23634015]
+
+
+wa2 [ 0.42722629  0.75470133 -0.15173843]
+wa2 [ 0.35337413  0.70878718 -0.20424825]
+transferencia simple 0.235188272705
+transferencia complicada traaaaansferencia 0.227317871864
+0.227317871864
+[ 0.49678476 -0.50321524  0.79678476]
+[ 0.49370178 -0.50629822  0.79370178]
+ITERACION 2
+hola
+[ 1.  0.  1.]
+hdx1:                  0.783707391702
+
+
+hdx2:                  0.668533751082
+
+
+error Individual:     [ 0.31597983]
+hdx3:                  0.684020171452
+gradiente:            [-0.0682948]
+[ 1.  0.  1.]
+error Cuadratico:     [ 0.06902012]
+
+
+ITERACION 3
+hola
+[ 1.  1.  0.]
+hdx1:                  0.496850933344
+
+
+hdx2:                  0.786097561376
+
+
+error Individual:     [ 0.36703065]
+hdx3:                  0.632969351107
+gradiente:            [-0.08526825]
+[ 1.  1.  0.]
+error Cuadratico:     [  1.01565682e-05]
+
+
+ITERACION 4
+hola
+[ 1.  1.  1.]
+hdx1:                  0.685918293312
+
+
+hdx2:                  0.750698544665
+
+
+error Individual:     [-0.66512449]
+hdx3:                  0.665124485388
+gradiente:            [ 0.14814577]
+[ 1.  1.  1.]
+error Cuadratico:     [ 0.22420317]
+
+
+wa2 [ 0.35337413  0.70878718 -0.20424825]
+wa2 [ 0.27930124  0.65797923 -0.25985466]
+transferencia simple 0.215434388212
+transferencia complicada traaaaansferencia 0.222755752148
+0.222755752148
+[ 0.49370178 -0.50629822  0.79370178]
+[ 0.49126507 -0.50873493  0.79126507]
+hola
+[ 1.  1.  1.]
+hdx1:                  0.68434129883
+
+
+hdx2:                  0.750995941883
+
+
+error Individual:     [-0.63051663]
+hdx3:                  0.630516632112
+gradiente:            [ 0.14688856]
+[ 1.  1.  1.]
+error Cuadratico:     [ 0.84519258]
+
+
+wa2 [ 0.27930124  0.65797923 -0.25985466]
+wa2 [ 0.20585696  0.60771828 -0.31501102]
+transferencia simple 0.216018285546
+transferencia complicada traaaaansferencia 0.222871623739
+0.222871623739
+[ 0.49126507 -0.50873493  0.79126507]
+[ 0.48901004 -0.51098996  0.78901004]
+ITERACION 5
+hola
+[ 1.  0.  0.]
+hdx1:                  0.619873195755
+
+
+hdx2:                  0.711355758466
+
+
+error Individual:     [-0.58867251]
+hdx3:                  0.588672514181
+gradiente:            [ 0.14253951]
+[ 1.  0.  0.]
+error Cuadratico:     [ 1.78382171]
+
+
+wa2 [ 0.20585696  0.60771828 -0.31501102]
+wa2 [ 0.13458721  0.56354007 -0.36570917]
+transferencia simple 0.23563041694
+transferencia complicada traaaaansferencia 0.227443051497
+0.227443051497
+[ 0.48901004 -0.51098996  0.78901004]
+[ 0.48660529 -0.51339471  0.78660529]
+hola
+[ 1.  0.  0.]
+hdx1:                  0.619306399976
+
+
+hdx2:                  0.711550067656
+
+
+error Individual:     [-0.55561166]
+hdx3:                  0.555611663784
+gradiente:            [ 0.1371846]
+[ 1.  0.  0.]
+error Cuadratico:     [ 2.98762465]
+
+
+wa2 [ 0.13458721  0.56354007 -0.36570917]
+wa2 [ 0.06599491  0.52106042 -0.41451603]
+transferencia simple 0.235765982925
+transferencia complicada traaaaansferencia 0.227481761212
+0.227481761212
+[ 0.48660529 -0.51339471  0.78660529]
+[ 0.48445666 -0.51554334  0.78445666]
+ITERACION 6
+hola
+[ 1.  0.  1.]
+hdx1:                  0.780556668056
+
+
+hdx2:                  0.669950673656
+
+
+error Individual:     [ 0.45140221]
+hdx3:                  0.548597792462
+gradiente:            [-0.11178445]
+[ 1.  0.  1.]
+error Cuadratico:     [ 1.98608449]
+
+
+wa2 [ 0.06599491  0.52106042 -0.41451603]
+wa2 [ 0.12188713  0.56468747 -0.37707099]
+transferencia simple 0.171287956009
+transferencia complicada traaaaansferencia 0.215478331667
+0.215478331667
+[ 0.48445666 -0.51554334  0.78445666]
+[ 0.48531112 -0.51468888  0.78531112]
+hola
+[ 1.  0.  1.]
+hdx1:                  0.780849246078
+
+
+hdx2:                  0.66944953854
+
+
+error Individual:     [ 0.42301883]
+hdx3:                  0.576981165031
+gradiente:            [-0.10324786]
+[ 1.  0.  1.]
+error Cuadratico:     [ 1.23246768]
+
+
+wa2 [ 0.12188713  0.56468747 -0.37707099]
+wa2 [ 0.17351106  0.60499797 -0.34251138]
+transferencia simple 0.171123700978
+transferencia complicada traaaaansferencia 0.215454901723
+0.215454901723
+[ 0.48531112 -0.51468888  0.78531112]
+[ 0.48616477 -0.51383523  0.78616477]
+ITERACION 7
+hola

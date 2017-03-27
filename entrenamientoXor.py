@@ -46,6 +46,10 @@ def corregir(wAnt, individualE, p):
     return w
 
 
+def transferencia(salida):
+    a = salida - pow(salida,2)
+    return a
+
 
 individualE = 32000.
 hdx1 = 0.
@@ -60,11 +64,13 @@ while (errorMax(individualE) == False):
         summation += individualE
         errorCuadratico = (0.5)*pow(summation,2)
         gradient = gradiente(hdx1)
+        transfer = transferencia(hdx1)
         print "Neurona 1"
         print "error Individual:    ",individualE
         print "hdx1:                 ",hdx1
         print "error Cuadratico:    ",errorCuadratico
         print "gradiente:           ",gradient
+        print "transferencia:           ",transfer
         print "\n"
         w[i] = corregir(w[i], individualE, p[i])
 

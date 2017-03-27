@@ -7,6 +7,7 @@ data = sp.genfromtxt("data.csv", delimiter="")
 t = data[:,[-1]]    #obtengo la ultima columna del arreglo data
 p = data[:,:-1]     #obtengo el arreglo data sin ultima columna
 
+
 print p
 b = np.ones((p.shape[0],1))
 p = np.concatenate((b,p), axis = 1)
@@ -15,6 +16,8 @@ print p
 
 w1 = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]])
 summation   = 0.
+errores = []
+
 
 def neurona(p,w):
         r = p.dot(w)
@@ -29,14 +32,14 @@ def gradiente(sumatoriaEI, hdx):
 def errorMax(errorRecibido):
 
     #diferencia = 0.1 - errorRecibido
-    if ((errorRecibido >= -0.10) and (errorRecibido <= 0.10)) or ((errorRecibido >= 0.90) and (errorRecibido <= 1.10)) :
+    #if ((errorRecibido >= -0.10) and (errorRecibido <= 0.10)) or ((errorRecibido >= 0.90) and (errorRecibido <= 1.10)) :
+    if (errorRecibido < 0.1):
         return True
     else:
         return False
 
 
-def proceso(wa, contador, iterador):
-    summation = 0.
+def proceso(wa, contador, iterador, summation):
     print "hola"
     print p[iterador]
     hdx1 = neurona(p[iterador],wa[0])
@@ -76,6 +79,8 @@ def proceso(wa, contador, iterador):
     print p[iterador]
     print "error Cuadratico:    ",errorCuadratico
     print "\n"
+
+
     #
     if errorMax(errorCuadratico):
         return 1
@@ -83,24 +88,27 @@ def proceso(wa, contador, iterador):
         gradient1 = wa[2][1] * gradient3 * transferencia(hdx1)
         gradient2 = wa[2][2] * gradient3 * transferencia(hdx2)
         #print gradient1
-        #print wa[2]
+        print "wa2",wa[2]
         wa[2] = wa[2] - deltaOmega(wa,gradient3,vector)
-        print wa[2]
+        print "wa2",wa[2]
         #aux = ftransferencia(p[iterador])
         aux = transferencia(hdx1)
+        print "transferencia simple",aux
+        print "transferencia complicada",ftransferencia(hdx1)
         print wa[0]
         wa[0] = wa[0] - corregirO(gradient1, aux)
         print wa[0]
 
         aux = transferencia(hdx2)
         wa[1] = wa[1] - corregirO(gradient2, aux)
+        wa[2] = wa[2] - corregirO(gradient2, aux)
         #wa[0] = corregirO(gradient3, wa[0], aux)
         #wa[1] = corregirO(gradient3, wa[1], aux)
         #if (iterador == 0):
         w1[0] = wa[0]
         w1[1] = wa[1]
         w1[2] = wa[2]
-
+        return summation
 
 
 def deltaOmega(wa, gradient, vec):
@@ -111,7 +119,7 @@ def corregirO(gradient, aux):
 
 def ftransferencia(x):
     print "traaaaansferencia",np.exp(-x) / pow(1+np.exp(-x),2)
-    return np.exp(-x) / pow(1+np.exp(-x),2)
+    return (np.exp(-x) / pow(1+np.exp(-x),2))
 
 def transferencia(salida):
     a = salida - pow(salida,2)
@@ -120,22 +128,34 @@ def transferencia(salida):
 contador = 0
 iterador = 0
 caux = 0
+summation = 0
 while (contador < 4):
     #En este marco debo trabajar las iteraciones a la tabla de entradas
     caux += 1
     print "ITERACION",caux
-    if (caux == 4000):
+    if (caux == 10):
         break;
     if (iterador < 3):
         #if (iterador == 0):
-        if (proceso(w1, contador, iterador) == 0):
+        if (proceso(w1, contador, iterador, summation) == 1):
             contador += 1
         else:
+            summation = proceso(w1, contador, iterador, summation)
             contador = 0
         iterador = iterador + 1
     else:
-        if (proceso(w1, contador, iterador) == 0):
+        if (proceso(w1, contador, iterador, summation) == 1):
             contador += 1
         else:
+            summation = proceso(w1, contador, iterador, summation)
             contador = 0
         iterador = 0
+
+
+print errores
+print caux
+
+ran = np.arange(0,caux,100)
+pl.plot(errores,ran)
+pl.grid(True)
+pl.show(block=False)
