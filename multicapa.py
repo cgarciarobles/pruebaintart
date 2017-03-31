@@ -104,3 +104,21 @@ while True:
             print "\t",w[3]
             print "\t",w[4]
             print '\n'
+
+            print "\n\tPesos en la capa K-1, Neurona 1:"
+            print "\t",w[0]
+            w[0] = cambioPeso(w[0],gradienteN1,p[i]).T
+            print "\tPesos en la capa K-1, Neurona 1, despues de corregir:"
+            print "\t",w[0]
+
+            print "\n\tPesos en la capa K-1, Neurona 2:"
+            print "\t",w[1]
+            w[1] = cambioPeso(w[1],gradienteN2,p[i]).T
+            print "\tPesos en la capa K-1, Neurona 2, despues de corregir:"
+            print "\t",w[1]
+
+            print "\n\tPesos en la capa K-1, Neurona 3:"
+            print "\t",w[2]
+            w[2] = cambioPeso(w[2],gradienteN3,p[i]).T
+            print "\tPesos en la capa K-1, Neurona 3, despues de corregir:"
+            print "\t",w[2]
