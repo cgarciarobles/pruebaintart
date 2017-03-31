@@ -7,6 +7,7 @@ data = sp.genfromtxt("archivoEntrada.csv", delimiter="")
 p = data[:,:-2]    #obtengo el arreglo sin las ultimas dos columnas
 t = data[:,[-2,-1]] #obtengo las ultimas dos columnas
 constante = 0.3
+erroresSum = []
 w = np.array([[0.5,-0.5,0.8, -0.5],[0.9,0.4,-0.2,-0.2],[0.5,0.2,0.1,0.8],[0.5,0.8,-0.1,0.7],[0.5,0.7,-0.2,0.4]]) #arreglo de pesos; para neurona1, vector 1; para neurona 2 v2; para neurona n;vn
                                                              #[ganancia, entrada1, entrada2]
 #w = np.random.rand(p.shape[1],3) #genera los numeros aleatorios que representan los pesos de la neurona, el ultimo parametro nos dice cuantos pesos son
@@ -60,6 +61,7 @@ epocas = 0
 while True:
     contador = 0 #Este me permite llevar la cuenta de la cantidad de iteraciones que no he corregido, al cumplirse 4, es decir una etapa, se termina y la red esta entrenada
     epocas += 1
+    promedio = 0
     print "EPOCA    :   ",epocas
     for i in range(0,4):
         sumatoria = 0
@@ -76,7 +78,7 @@ while True:
         sumatoria = errorIndividualN4 + errorIndividualN5
         gradienteN4 = gradiente(sumatoria, hdx4)
         gradienteN5 = gradiente(sumatoria, hdx5)
-
+        promedio += eCuadratico
         #SECCION DE IMPRESION
         print "Datos de entrada",p[i]
         print "Salida Neurona 1 ",hdx1
@@ -132,9 +134,15 @@ while True:
             break;
         #if (epocas == 2):
         #    break;
+    erroresSum.append(promedio/4)
     if (epocas == 5001):
         break;
     if (contador == 4):
         break;
 
 print epocas
+pl.axhline(0, color="black")
+pl.axvline(0, color="black")
+pl.plot(np.arange(0., len(erroresSum), 1.),np.array(erroresSum))
+pl.grid(True)
+pl.show()
