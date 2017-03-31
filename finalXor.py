@@ -11,6 +11,7 @@ p = np.concatenate((b,p), axis = 1) #concateno el vector de 1's al inicio de p, 
 w = np.array([[0.5,-0.5,0.8],[0.9,0.4,-0.2],[0.5,0.8,-0.1]]) #arreglo de pesos; para neurona1, vector 1; para neurona 2 v2; para neurona n;vn
                                                              #[ganancia, entrada1, entrada2]
 constante = 0.3
+erroresSum = []
 
 def neurona(p,w):
     #La funcion neurona realiza la multiplicacion entre el vector de entradas (o puntos, en el primer caso) y los pesos de esta neurona, representados en w[n]
@@ -66,6 +67,7 @@ epocas = 0
 while True:
     contador = 0 #Este me permite llevar la cuenta de la cantidad de iteraciones que no he corregido, al cumplirse 4, es decir una etapa, se termina y la red esta entrenada
     epocas += 1
+    promedio = 0
     print "EPOCA    :   ",epocas
     for i in range(0,4):
         sumatoria = 0
@@ -77,6 +79,7 @@ while True:
         sumatoria += errorIndividual #La sumatoria se da cuando la red tiene varias salidas. En este caso, por ser una, es igual al error individual
         eCuadratico = errorCuadratico(sumatoria) #El error cuadratico se calcula a partir de la sumatoria de los errores individuales de la etapa
         gradienteN3 = gradiente(sumatoria,hdx3)
+        promedio += eCuadratico
         print "Datos de entrada",p[i]
         print "Salida Neurona 1 ",hdx1
         print "Salida Neurona 2 ",hdx2
@@ -127,6 +130,8 @@ while True:
             break;
         if (epocas == 5000):
             break;
+
+    erroresSum.append(promedio/4)
     if (epocas == 5000):
         break;
     if (contador == 4):
@@ -134,3 +139,24 @@ while True:
 
 
 print epocas
+
+#Baja de curva de error cuadratico medio
+pl.axhline(0, color="black")
+pl.axvline(0, color="black")
+pl.plot(np.arange(0., len(erroresSum), 1.),np.array(erroresSum))
+pl.grid(True)
+pl.show()
+
+
+y = np.arange(-5, 5, 1)
+x1 = (-w[0][1]*y - w[0][0]) / w[0][2]
+x2 = (-w[1][1]*y - w[1][0]) / w[1][2]
+
+pl.axhline(0, color="black")
+pl.axvline(0, color="black")
+pl.plot([1, 0], [1, 0], "o")
+pl.plot([1, 0], [0, 1], "o")
+pl.plot(y,x1)
+pl.plot(y,x2)
+pl.grid(True)
+pl.show()
