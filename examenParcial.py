@@ -8,7 +8,7 @@ p = data[:,:-2]             #obtengo el arreglo sin las ultimas dos columnas
 t = data[:,[-2,-1]]         #obtengo las ultimas dos columnas
 constante = 0.3
 erroresSum = []
-w = np.array([[0.5,-0.5,0.8, -0.5],[0.5,-0.5,0.8, -0.5],[0.5,-0.5,0.8, -0.5], #Capa1 N1, N2, N3
+w = np.array([[0.5,-0.5,0.8, -0.5],[0.9,0.4,-0.2, -0.2],[0.5,0.2,0.1,0.8], #Capa1 N1, N2, N3
                 [0.5,-0.5,0.8, -0.5],[0.9,0.4,-0.2,-0.2],[0.5,0.2,0.1,0.8],    #Capa2 N4, N5, N6
                 [0.5,0.8,-0.1,0.7],[0.5,0.7,-0.2,0.4]])                        #Capa3 N7, N8
 
@@ -117,6 +117,7 @@ while True:
             gradienteN2 = (w[3][2] * gradienteN4 * funcionPrima(hdx2)  +  w[4][2] * gradienteN5 * funcionPrima(hdx2) + w[5][2] * gradienteN6 * funcionPrima(hdx2))
             gradienteN3 = (w[3][3] * gradienteN4 * funcionPrima(hdx3)  +  w[4][3] * gradienteN5 * funcionPrima(hdx3) + w[5][3] * gradienteN6 * funcionPrima(hdx3))
 
+
             #ULTIMAS DOS NEURONAS
             print "\n\tPesos en la capa K:"
             print "\t",w[6] #Pesos de las salidas, ultimas dos neuronas
@@ -128,7 +129,12 @@ while True:
             print "\t",w[7]
             print '\n'
 
+
+            print "Gradiente N4: ",gradienteN4
+            print "Gradiente N5: ",gradienteN5
+            print "Gradiente N6: ",gradienteN6
             #TRES NEURONAS INTERMEDIAS
+            print entradasN1
             print "\n\tPesos en la capa K-1, Neurona 1:"
             print "\t",w[3]
             w[3] = cambioPeso(w[3],gradienteN4,entradasN1).T
@@ -146,7 +152,11 @@ while True:
             w[5] = cambioPeso(w[5],gradienteN6,entradasN1).T
             print "\tPesos en la capa K-1, Neurona 3, despues de corregir:"
             print "\t",w[5]
+            print "\n"
 
+            print "Gradiente N1: ",gradienteN1
+            print "Gradiente N2: ",gradienteN2
+            print "Gradiente N3: ",gradienteN3
             #PRIMERAS TRES NEURONAS
             print "\n\tPesos en la capa K-2, Neurona 1:"
             print "\t",w[0]
