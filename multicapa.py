@@ -78,17 +78,17 @@ while True:
         gradienteN5 = gradiente(sumatoria, hdx5)
 
         #SECCION DE IMPRESION
-        ##print "Datos de entrada",p[i]
-        ##print "Salida Neurona 1 ",hdx1
-        ##print "Salida Neurona 2 ",hdx2
-        ##print "Salida Neurona 3 ",hdx3
-        ##print "Salida Neurona 4 ",hdx4
-        ##print "Salida Neurona 5 ",hdx5
-        ##print "Error Individual N4 ",errorIndividualN4
-        ##print "Error Individual N5 ",errorIndividualN5
-        ##print "Error Cuadratico ",eCuadratico
-        ##print "Gradiente N4     ",gradienteN4
-        ##print "Gradiente N5     ",gradienteN5
+        print "Datos de entrada",p[i]
+        print "Salida Neurona 1 ",hdx1
+        print "Salida Neurona 2 ",hdx2
+        print "Salida Neurona 3 ",hdx3
+        print "Salida Neurona 4 ",hdx4
+        print "Salida Neurona 5 ",hdx5
+        print "Error Individual N4 ",errorIndividualN4
+        print "Error Individual N5 ",errorIndividualN5
+        print "Error Cuadratico ",eCuadratico
+        print "Gradiente N4     ",gradienteN4
+        print "Gradiente N5     ",gradienteN5
         #FIN SECCION DE IMPRESION
 
         if eCuadratico > 0.01:
@@ -122,3 +122,19 @@ while True:
             w[2] = cambioPeso(w[2],gradienteN3,p[i]).T
             print "\tPesos en la capa K-1, Neurona 3, despues de corregir:"
             print "\t",w[2]
+            print '\n'
+            contador = 0
+        else:
+            contador+=1
+            print "\n\n"
+
+        if contador == 4:
+            break;
+        #if (epocas == 2):
+        #    break;
+    if (epocas == 5001):
+        break;
+    if (contador == 4):
+        break;
+
+print epocas

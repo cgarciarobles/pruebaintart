@@ -1,0 +1,58 @@
+Datos de entrada [ 1.  5.  4.  5.]
+Salida Neurona 4  0.100826583614
+Salida Neurona 5  0.09908119347
+Error Cuadratico  0.00999154143132
+Gradiente N4      0.0181237557467
+Gradiente N5      0.0178445899175
+
+
+
+Datos de entrada [ 1.  7.  1.  8.]
+Salida Neurona 4  0.962348133315
+Salida Neurona 5  0.937227795272
+Error Cuadratico  0.00267900637562
+Gradiente N4      -0.00363878625191
+Gradiente N5      -0.00590813441201
+
+
+
+Datos de entrada [ 1.  5.  3.  7.]
+Salida Neurona 4  0.512387449147
+Salida Neurona 5  0.487612550853
+Error Cuadratico  0.237765999749
+Gradiente N4      -4.00821893836e-15
+Gradiente N5      -4.00821893836e-15
+
+	Pesos en la capa K despues de corregir:
+	[-0.58502877  3.10315212 -1.99243001  3.85238663]
+	[-0.58043195  3.04275199 -2.01424765  3.308651  ]
+
+  Pesos en la capa K-1, Neurona 1, despues de corregir:
+	[ 1.34861187 -2.09391521  4.17590724 -2.0582557 ]
+
+  Pesos en la capa K-1, Neurona 2, despues de corregir:
+	[ 0.86181347  1.28629939  1.2433601  -2.00561314]
+
+	Pesos en la capa K-1, Neurona 3, despues de corregir:
+	[ 0.20710885 -0.12112765 -3.13226255  1.19113741]
+
+
+Datos de entrada [ 1.  4.  4.  4.]7
+Salida Neurona 4  0.50814712541
+Salida Neurona 5  0.49185287459
+Error Cuadratico  0.258213501063
+Gradiente N4      2.77482064379e-16
+Gradiente N5      2.77482064379e-16
+
+	Pesos en la capa K despues de corregir:
+	[-0.58502877  3.10315212 -1.99243001  3.85238663]
+	[-0.58043195  3.04275199 -2.01424765  3.308651  ]
+
+  Pesos en la capa K-1, Neurona 1, despues de corregir:
+	[ 1.34861187 -2.09391521  4.17590724 -2.0582557 ]
+
+  Pesos en la capa K-1, Neurona 2, despues de corregir:
+	[ 0.86181347  1.28629939  1.2433601  -2.00561314]
+
+	Pesos en la capa K-1, Neurona 3, despues de corregir:
+	[ 0.20710885 -0.12112765 -3.13226255  1.19113741]
