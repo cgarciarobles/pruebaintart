@@ -3,7 +3,7 @@ import numpy as np
 import timeit as ti
 import matplotlib.pyplot as pl
 
-data = sp.genfromtxt("archivoEntrada.csv", delimiter="")
+data = sp.genfromtxt("entradaIng.csv", delimiter="")
 p = data[:,:-2]    #obtengo el arreglo sin las ultimas dos columnas
 t = data[:,[-2,-1]] #obtengo las ultimas dos columnas
 constante = 0.3
@@ -135,12 +135,13 @@ while True:
         #if (epocas == 2):
         #    break;
     erroresSum.append(promedio/4)
-    if (epocas == 5001):
+    if (epocas == 50000):
         break;
     if (contador == 4):
         break;
 
 print epocas
+print w
 pl.axhline(0, color="black")
 pl.axvline(0, color="black")
 pl.plot(np.arange(0., len(erroresSum), 1.),np.array(erroresSum))

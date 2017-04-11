@@ -90,20 +90,20 @@ while True:
         promedio += eCuadratico
 
         #SECCION DE IMPRESION
-        print "Datos de entrada",p[i]
-        print "Salida Neurona 1 ",hdx1
-        print "Salida Neurona 2 ",hdx2
-        print "Salida Neurona 3 ",hdx3
-        print "Salida Neurona 4 ",hdx4
-        print "Salida Neurona 5 ",hdx5
-        print "Salida Neurona 6 ",hdx6
-        print "Salida Neurona 7 ",hdx7
-        print "Salida Neurona 8 ",hdx8
-        print "Error Individual N7 ",errorIndividualN7
-        print "Error Individual N8 ",errorIndividualN8
-        print "Error Cuadratico ",eCuadratico
-        print "Gradiente N7     ",gradienteN7
-        print "Gradiente N8     ",gradienteN8
+        #print "Datos de entrada",p[i]
+        #print "Salida Neurona 1 ",hdx1
+        #print "Salida Neurona 2 ",hdx2
+        #print "Salida Neurona 3 ",hdx3
+        #print "Salida Neurona 4 ",hdx4
+        #print "Salida Neurona 5 ",hdx5
+        #print "Salida Neurona 6 ",hdx6
+        #print "Salida Neurona 7 ",hdx7
+        #print "Salida Neurona 8 ",hdx8
+        #print "Error Individual N7 ",errorIndividualN7
+        #print "Error Individual N8 ",errorIndividualN8
+        #print "Error Cuadratico ",eCuadratico
+        #print "Gradiente N7     ",gradienteN7
+        #print "Gradiente N8     ",gradienteN8
         #FIN SECCION DE IMPRESION
 
         if eCuadratico > 0.01:
@@ -119,78 +119,79 @@ while True:
 
 
             #ULTIMAS DOS NEURONAS
-            print "\n\tPesos en la capa K:"
-            print "\t",w[6] #Pesos de las salidas, ultimas dos neuronas
-            print "\t",w[7]
+            #print "\n\tPesos en la capa K:"
+            #print "\t",w[6] #Pesos de las salidas, ultimas dos neuronas
+            #print "\t",w[7]
             w[6] = w[6] + deltaOmega(gradienteN7,entradasN2)
             w[7] = w[7] + deltaOmega(gradienteN8,entradasN2)
-            print "\tPesos en la capa K despues de corregir:"
-            print "\t",w[6]
-            print "\t",w[7]
-            print '\n'
+            #print "\tPesos en la capa K despues de corregir:"
+            #print "\t",w[6]
+            #print "\t",w[7]
+            #print '\n'
 
 
-            print "Gradiente N4: ",gradienteN4
-            print "Gradiente N5: ",gradienteN5
-            print "Gradiente N6: ",gradienteN6
+            #print "Gradiente N4: ",gradienteN4
+            #print "Gradiente N5: ",gradienteN5
+            #print "Gradiente N6: ",gradienteN6
             #TRES NEURONAS INTERMEDIAS
-            print entradasN1
-            print "\n\tPesos en la capa K-1, Neurona 1:"
-            print "\t",w[3]
+            #print entradasN1
+            #print "\n\tPesos en la capa K-1, Neurona 1:"
+            #print "\t",w[3]
             w[3] = cambioPeso(w[3],gradienteN4,entradasN1).T
-            print "\tPesos en la capa K-1, Neurona 1, despues de corregir:"
-            print "\t",w[3]
+            #print "\tPesos en la capa K-1, Neurona 1, despues de corregir:"
+            #print "\t",w[3]
 
-            print "\n\tPesos en la capa K-1, Neurona 2:"
-            print "\t",w[4]
+            #print "\n\tPesos en la capa K-1, Neurona 2:"
+            #print "\t",w[4]
             w[4] = cambioPeso(w[4],gradienteN5,entradasN1).T
-            print "\tPesos en la capa K-1, Neurona 2, despues de corregir:"
-            print "\t",w[4]
+            #print "\tPesos en la capa K-1, Neurona 2, despues de corregir:"
+            #print "\t",w[4]
 
-            print "\n\tPesos en la capa K-1, Neurona 3:"
-            print "\t",w[5]
+            #print "\n\tPesos en la capa K-1, Neurona 3:"
+            #print "\t",w[5]
             w[5] = cambioPeso(w[5],gradienteN6,entradasN1).T
-            print "\tPesos en la capa K-1, Neurona 3, despues de corregir:"
-            print "\t",w[5]
-            print "\n"
+            #print "\tPesos en la capa K-1, Neurona 3, despues de corregir:"
+            #print "\t",w[5]
+            #print "\n"
 
-            print "Gradiente N1: ",gradienteN1
-            print "Gradiente N2: ",gradienteN2
-            print "Gradiente N3: ",gradienteN3
+            #print "Gradiente N1: ",gradienteN1
+            #print "Gradiente N2: ",gradienteN2
+            #print "Gradiente N3: ",gradienteN3
             #PRIMERAS TRES NEURONAS
-            print "\n\tPesos en la capa K-2, Neurona 1:"
-            print "\t",w[0]
+            #print "\n\tPesos en la capa K-2, Neurona 1:"
+            #print "\t",w[0]
             w[0] = cambioPeso(w[0],gradienteN1,p[i]).T
-            print "\tPesos en la capa K-2, Neurona 1, despues de corregir:"
-            print "\t",w[0]
+            #print "\tPesos en la capa K-2, Neurona 1, despues de corregir:"
+            #print "\t",w[0]
 
-            print "\n\tPesos en la capa K-2, Neurona 2:"
-            print "\t",w[1]
+            #print "\n\tPesos en la capa K-2, Neurona 2:"
+            #print "\t",w[1]
             w[1] = cambioPeso(w[1],gradienteN2,p[i]).T
-            print "\tPesos en la capa K-2, Neurona 2, despues de corregir:"
-            print "\t",w[1]
+            #print "\tPesos en la capa K-2, Neurona 2, despues de corregir:"
+            #print "\t",w[1]
 
-            print "\n\tPesos en la capa K-2, Neurona 3:"
-            print "\t",w[2]
+            #print "\n\tPesos en la capa K-2, Neurona 3:"
+            #print "\t",w[2]
             w[2] = cambioPeso(w[2],gradienteN3,p[i]).T
-            print "\tPesos en la capa K-2, Neurona 3, despues de corregir:"
-            print "\t",w[2]
-            print '\n'
+            #print "\tPesos en la capa K-2, Neurona 3, despues de corregir:"
+            #print "\t",w[2]
+            #print '\n'
 
             contador = 0
         else:
             contador += 1
-            print "\n\n"
+            #print "\n\n"
 
         if contador == 4:
             break;
 
     erroresSum.append(promedio/4)
-    if (epocas == 1000):
+    if (epocas == 50000):
         break;
     if (contador == 4):
         break;
 
+print w
 print epocas
 pl.axhline(0, color="black")
 pl.axvline(0, color="black")
