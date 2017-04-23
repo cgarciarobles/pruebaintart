@@ -9,7 +9,7 @@ t = data[:,[-2,-1]] #obtengo las ultimas dos columnas
 constante = 0.3
 erroresSum = []
 w = np.array([[0.5,-0.5,0.8, -0.5],[0.9,0.4,-0.2,-0.2],[0.5,0.2,0.1,0.8],[0.5,0.8,-0.1,0.7],[0.5,0.7,-0.2,0.4]]) #arreglo de pesos; para neurona1, vector 1; para neurona 2 v2; para neurona n;vn
-                                                             #[ganancia, entrada1, entrada2]
+print w                                                             #[ganancia, entrada1, entrada2]
 #w = np.random.rand(p.shape[1],3) #genera los numeros aleatorios que representan los pesos de la neurona, el ultimo parametro nos dice cuantos pesos son
 
 #Ganancia

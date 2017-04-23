@@ -1,7 +1,7 @@
 import cv2
 
 # Read the images
-foreground = cv2.imread("puppets.png")
+foreground = cv2.imread("conversion.png")
 foreground = cv2.resize(foreground, (1040,585))
 background = cv2.imread("ocean.png")
 background = cv2.resize(background, (1040,585))
